@@ -14,6 +14,7 @@ public:
   ~PHONEBOOK();
   void add_new_user();
   CONTACT contact[8];
+  void show_user(PHONEBOOK& phonebook);
   int size;
 };
 
