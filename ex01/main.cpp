@@ -7,10 +7,10 @@ void print_menu()
 {
     static const  char* txt = 
     "\n\n****************************************************\n"
-    "*   HELLO WORLD!!!                                 *\n"
-    "*   1)Add : Create new user!                       *\n"
-    "*   2)Search : Find all information for user       *\n"
-    "*   3)Exit : Exited program!                       *\n"
+    "*   HELLO WORLD!!!                                  *\n"
+    "*   1)Add : save a new contact                      *\n"
+    "*   2)Search : display a specific contact           *\n"
+    "*   3)Exit                                          *\n"
     "****************************************************\n\n";
     std::cout << txt << std::endl;
 }
