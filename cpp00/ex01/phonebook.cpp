@@ -54,15 +54,26 @@ void print_user_info(std::string value)
 
 void all_info(CONTACT& contact)
 {
-  std::cout << contact.first_name + " " + contact.last_name +" " +  contact.nick_name + " " + contact.phone_number + " " + contact.darkest_secret << std::endl;
+  std::cout << "first name is : " + contact.first_name << std::endl;
+  std::cout << "last name is : " + contact.last_name << std::endl;
+  std::cout << "phone number is : " + contact.phone_number << std::endl;
+  std::cout << "darkest secret is : " + contact.darkest_secret << std::endl;
+  std::cout << "nickname is : " + contact.nick_name << std::endl;
 }
 
 void PHONEBOOK::show_user(PHONEBOOK& phonebok)
 {
-  std::string index;
-  std::cout << "--------------------------------------------" << std::endl;
-  std::cout << "| index   |first name|last name |nickname  |"<<std::endl;
-  std::cout << "--------------------------------------------" << std::endl;
+  std::string s_index;
+  int i_index;
+  std::cout << "---------------------------------------------" << std::endl;
+  std::cout << "|";
+  print_user_info("index");
+  print_user_info("first name");
+  print_user_info("last name");
+  print_user_info("nickname");
+  std::cout << std::endl;
+  std::cout << "---------------------------------------------" << std::endl;
+
   for (int i = 0; i < this->size; i++)
   {
     std::cout << "|";
@@ -70,12 +81,21 @@ void PHONEBOOK::show_user(PHONEBOOK& phonebok)
     print_user_info(phonebok.contact[i].first_name);
     print_user_info(phonebok.contact[i].last_name);
     print_user_info(phonebok.contact[i].nick_name);
-  std::cout << std::endl << "--------------------------------------------" << std::endl;
+  std::cout << std::endl << "---------------------------------------------" << std::endl;
   }
   std::cout << std::endl << "Please kies index number!"<<std::endl;
-  std::cin >> index;
-  if (std::stoi(index) < this->size + 1)
-    all_info(phonebok.contact[std::stoi(index)]);
+  std::cin >> s_index;
+  try
+  {
+    i_index = std::stoi(s_index);
+  }
+  catch(const std::exception& e)
+  {
+    i_index = -1;
+  }
+  
+  if (i_index < this->size + 1 && i_index != -1)
+    all_info(phonebok.contact[i_index - 1]);
   else
     std::cout << "wrong index!!!"<<std::endl;
 }

@@ -6,12 +6,12 @@
 void print_menu()
 {
     static const  char* txt = 
-    "\n\n****************************************************\n"
+    "\n\n*****************************************************\n"
     "*   HELLO WORLD!!!                                  *\n"
     "*   1)Add : save a new contact                      *\n"
     "*   2)Search : display a specific contact           *\n"
     "*   3)Exit                                          *\n"
-    "****************************************************\n\n";
+    "*****************************************************\n\n";
     std::cout << txt << std::endl;
 }
 
@@ -42,7 +42,7 @@ int main(void)
         else if (value == "EXIT")
             break;
         else
-            std::cout << "giasdkasf";
+            std::cout << "ONLY ADD-SEARCH-EXIT!!!";
     }
 }
 
