@@ -20,10 +20,16 @@ int main(int argc, char **argv)
     //ios out => write
 	my_file.open(file_name, std::ios::in);
 	if (!my_file) {
-		std::cout << "File not created!";
+		std::cout << "File not opened!";
 	}
 	else {
         new_file.open( file_name + ".replace", std::ios::out);
+        if (!new_file)
+        {
+            close(my_file);
+            std::cout << "File not created!"<<std::endl;
+            return 0;
+        }
 	    while (1)
         {
 
