@@ -1,12 +1,17 @@
-#include "contact.hpp"
+#include "Contact.hpp"
+
+//Constructor
 CONTACT::CONTACT(void)
 {
 }
 
+//Constructor ended
 CONTACT::~CONTACT(void)
 {
 }
-CONTACT CONTACT::get_new_user_info()
+
+//added new contact
+CONTACT CONTACT::get_new_contact_info()
 {
     CONTACT contact;
     std::cout << "fisrt name :" << std::endl;

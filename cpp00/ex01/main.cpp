@@ -1,7 +1,12 @@
-#include <iostream>
-#include <string>
-#include "contact.hpp"
-#include "phonebook.hpp"
+#include "Contact.hpp"
+#include "Phonebook.hpp"
+
+/*
+Constructors
+A constructor in C++ is a special method that is automatically called when an object of a class is created.
+
+To create a constructor, use the same name as the class, followed by parentheses ():
+*/
 
 void print_menu()
 {
@@ -33,7 +38,7 @@ int main(void)
     while (1)
     {
         print_menu();
-        std::cin >> value;
+        std::getline(std::cin, value);
         value = upper(value);
         if (value == "ADD")
             phonebook.add_new_user();
@@ -44,7 +49,5 @@ int main(void)
         else
             std::cout << "ONLY ADD-SEARCH-EXIT!!!";
     }
+    return 0;
 }
-
-//  The contact fields are: first name, last name, nickname, phone number, and
-// darkest secret. A saved contact can’t have empty fields.

@@ -1,7 +1,7 @@
-NAME			=	phonebookl
+NAME			=	Phonebook
 
-SRC				= 	phonebook.cpp\
-					contact.cpp\
+SRC				= 	Phonebook.cpp\
+					Contact.cpp\
 					main.cpp
 
 INC				=	-I ./inc

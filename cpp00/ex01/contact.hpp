@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <string>
-#include <iomanip>
 
 class CONTACT
 {
@@ -16,6 +15,6 @@ public:
     std::string phone_number;
     std::string nick_name;
     std::string darkest_secret;
-    CONTACT get_new_user_info();
+    CONTACT get_new_contact_info();
 };
   #endif
