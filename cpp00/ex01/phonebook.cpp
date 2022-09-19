@@ -12,8 +12,6 @@ PHONEBOOK::~PHONEBOOK()
 }
 
 //add new user. First get contact information and then check how many contact there have. if there are 8 contact replace last one and add.
-
-
 void PHONEBOOK::add_new_user()
 {
     CONTACT contact;
