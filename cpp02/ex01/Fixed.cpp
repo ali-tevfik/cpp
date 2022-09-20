@@ -9,12 +9,16 @@ Fixed::Fixed(/* args */)
 //constructor
 Fixed::Fixed(int value)
 {
+	this->value = value * (1 << fractionalBits);
 	std::cout << "int Constructor called" << std::endl;
-	this->value = value;
 }
 //constructor
 Fixed::Fixed(const float value)
 {
+	int a = (1<<fractionalBits);
+	this->value = std::roundf( value * (1 << fractionalBits));
+	std::cout << "sat  = " << value << "adsasda" <<a  << " result " << value * a << " value = " << this->value << std::endl;
+	
 	std::cout << "float Constructor called" << std::endl;
 }
 
@@ -54,7 +58,7 @@ std::ostream &operator<<( std::ostream &o, const Fixed &fixed){
 Fixed& Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	value = fixed.getRawBits();
+	this->value = fixed.getRawBits();
 	return *this;
 }
 
@@ -63,11 +67,11 @@ Fixed& Fixed::operator=(const Fixed &fixed)
 
 //toInt
 int Fixed::toInt()const {
-    std::cout << "to int" << std::endl;
-	return this->value;
+	  int i = this->value / (1 << fractionalBits);
+    return i;
 }
 //float
 float Fixed::toFloat()const{
-    std::cout << "to float" << std::endl;
-	return this->value;
+	float f = (float)value / (1 << fractionalBits);
+    return f;
 }
