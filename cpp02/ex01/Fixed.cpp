@@ -4,12 +4,12 @@
 Fixed::Fixed(/* args */)
 {
 	std::cout << "Default Constructor called" << std::endl;
-	this->value = 0;
+	this->value = 0 ;
 }
 //constructor
 Fixed::Fixed(int value)
 {
-	this->value = value * (1 << fractionalBits);
+	this->value = value << fractionalBits;
 	std::cout << "int Constructor called" << std::endl;
 }
 //constructor
