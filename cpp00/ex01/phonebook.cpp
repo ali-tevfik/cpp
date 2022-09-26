@@ -16,8 +16,12 @@ void PHONEBOOK::add_new_user()
 {
     CONTACT contact;
     contact = contact.get_new_contact_info();
+
     if (this->size == 8)
     {
+      for (int i = 0; i < 7; i++)
+        this->contact[i] = this->contact[i + 1];
+      
       this->contact[7].first_name = contact.first_name;
       this->contact[7].last_name = contact.last_name;
       this->contact[7].darkest_secret = contact.darkest_secret;
