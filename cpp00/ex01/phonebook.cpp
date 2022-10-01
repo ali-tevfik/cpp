@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   phonebook.cpp                                      :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: adoner <adoner@student.codam.nl>             +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/01 17:47:46 by adoner        #+#    #+#                 */
+/*   Updated: 2022/10/01 17:47:47 by adoner        ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 
 //Constructor
@@ -18,6 +30,9 @@ void PHONEBOOK::add_new_user()
     contact = contact.get_new_contact_info();
     if (this->size == 8)
     {
+      for (int i = 0; i < 7; i++)
+        this->contact[i] = this->contact[i + 1];
+      
       this->contact[7].first_name = contact.first_name;
       this->contact[7].last_name = contact.last_name;
       this->contact[7].darkest_secret = contact.darkest_secret;
@@ -30,7 +45,7 @@ void PHONEBOOK::add_new_user()
       this->size++;
     }
 }
-
+//TODO empty no
 
 //print right
 void print_space(int len)
