@@ -69,7 +69,7 @@ int Fixed::toInt()const {
 }
 //float
 float Fixed::toFloat()const{
-	float f = (float)value / (1 << fractionalBits);
+	float f = value / (1 << fractionalBits);
     return f;
 }
 
@@ -137,8 +137,8 @@ bool  Fixed::operator == (const Fixed& fixed)
 /// @return 
 Fixed& Fixed::operator++()
 {
-	std::cout << "void "<<std::endl;
 	this->value++;
+	std::cout << "void " << this->value <<std::endl;
 	return (*this);
 }
 /// @brief a++

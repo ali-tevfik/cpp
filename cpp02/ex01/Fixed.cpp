@@ -15,9 +15,8 @@ Fixed::Fixed(int value)
 //constructor
 Fixed::Fixed(const float value)
 {
-	int a = (1<<fractionalBits);
-	this->value = std::roundf( value * (1 << fractionalBits));
-	std::cout << "sat  = " << value << "adsasda" <<a  << " result " << value * a << " value = " << this->value << std::endl;
+	this->value = (int)std::roundf( value * (1 << fractionalBits));
+	printf("a  =   %d \n",this->value);
 	
 	std::cout << "float Constructor called" << std::endl;
 }
