@@ -32,7 +32,7 @@ ScavTrap::~ScavTrap()
 void ScavTrap::attack(const std::string& target)
 {
     if (_energy_points == 0)
-        std::cout << _name << " cant anything(energy emtpy!)." << std::endl;
+        std::cout << "[ScavTrap] " << _name << " cant anything(energy emtpy!)." << std::endl;
     else
     {
         _energy_points--;
