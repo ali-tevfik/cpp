@@ -7,10 +7,7 @@
 class ClapTrap
 {
 private:
-   std::string name;
-   unsigned int hit_points = 10;
-   unsigned int Energy_points = 10;
-   unsigned int attack_damage = 0;
+   std::string _name;
    unsigned int _hit_points;
    unsigned int _energy_points;
    unsigned int _attack_damage;
@@ -26,11 +23,12 @@ public:
     void beReparied(unsigned int amount);
     void attack(const std::string& target);
 
-    const std::string& getName();
-    unsigned int getHitPoints();
-    unsigned int getEnergyPoints();
-    unsigned int getAttackDamage();
+    const std::string& getName()const;
+    unsigned int getHitPoints()const;
+    unsigned int getEnergyPoints()const;
+    unsigned int getAttackDamage()const;
 
 };
+std::ostream &operator<<( std::ostream &o, const ClapTrap &claptrap);
 
 #endif
