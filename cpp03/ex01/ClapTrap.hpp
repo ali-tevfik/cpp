@@ -4,13 +4,14 @@
 #include <iostream>
 
 
+# define YELLOW "\033[0;33m"
+# define BLUE "\033[0;34m"
+#define WHITE " \033[0;37m"
+
 class ClapTrap
 {
-private:
-   std::string name;
-   unsigned int hit_points = 100;
-   unsigned int Energy_points = 50;
-   unsigned int attack_damage =20;
+protected:
+   std::string _name;
    unsigned int _hit_points;
    unsigned int _energy_points;
    unsigned int _attack_damage;
@@ -18,7 +19,7 @@ public:
     ClapTrap(/* args */);
     ClapTrap(const std::string &name);
     ClapTrap(ClapTrap& claptrap);
-    ClapTrap &operator=(ClapTrap& claptrap);
+    ClapTrap &operator=(const ClapTrap& claptrap);
     ~ClapTrap();
 
     void attac(const std::string& target);
@@ -26,11 +27,12 @@ public:
     void beReparied(unsigned int amount);
     void attack(const std::string& target);
 
-    const std::string& getName();
-    unsigned int getHitPoints();
-    unsigned int getEnergyPoints();
-    unsigned int getAttackDamage();
+    const std::string& getName()const;
+    unsigned int getHitPoints()const;
+    unsigned int getEnergyPoints()const;
+    unsigned int getAttackDamage()const;
 
 };
+std::ostream &operator<<( std::ostream &o, const ClapTrap &claptrap);
 
 #endif

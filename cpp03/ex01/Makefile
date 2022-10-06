@@ -1,7 +1,8 @@
 NAME			=	ClasTrap
 
 SRC				= 	main.cpp\
-					ClapTrap.cpp
+					ClapTrap.cpp\
+					ScavTrap.cpp
 			
 OBJS			=	$(SRC:%.cpp=%.o)
 
