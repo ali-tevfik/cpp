@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   contact.cpp                                        :+:    :+:            */
+/*   Contact.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/01 17:47:42 by adoner        #+#    #+#                 */
-/*   Updated: 2022/10/01 17:47:42 by adoner        ########   odam.nl         */
+/*   Updated: 2022/10/19 20:27:46 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+//TODO check spaces and ex00 delete no parametre line!
 #include "Contact.hpp"
 
 //Constructor

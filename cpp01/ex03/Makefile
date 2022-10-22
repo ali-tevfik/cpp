@@ -1,22 +1,31 @@
-NAME			=	zombieHorde
+NAME			= unnecessary_violance
 
-SRC				= 	main.cpp\
+CPP				= c++
+
+FLAGS			= -Wall -Wextra -Werror -I -std=c++98
+
+SRC				=   main.cpp\
 					HumanA.cpp\
 					HumanB.cpp\
 					Weapon.cpp
-OBJS			=	$(SRC:%.cpp=%.o)
 
-CPP				=	g++
-CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
+INC				= HumanA.hpp HumanB.hpp Weapon.hpp
 
-all:			$(NAME)
+OBJ_DIR			= obj
+OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 
-$(NAME):		$(OBJS)
-				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
-clean:
-	rm -f $(OBJS)
-fclean: clean
-	rm -f $(NAME)
-re: fclean all
-.PHONY: all clean fclean re bonus
+all : $(NAME)
+
+$(OBJ_DIR)/%.o : %.cpp $(INC)
+	@mkdir -p $(dir $@)
+	$(CPP) $(FLAGS) -c $< -o $@
+
+$(NAME) : $(OBJ)
+	$(CPP) $(FLAGS) $^ -o $@
+
+clean : 
+	rm -rf $(OBJ_DIR)
+fclean : clean
+	rm -rf $(NAME)
+re : fclean all
+.PHONY : clean, fclean, all, re

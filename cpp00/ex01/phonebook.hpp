@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/01 17:47:52 by adoner        #+#    #+#                 */
-/*   Updated: 2022/10/01 17:47:54 by adoner        ########   odam.nl         */
+/*   Updated: 2022/10/05 17:44:21 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "Contact.hpp"
 #include <string>
 
-// TODO contact private
 class PHONEBOOK
 {
 private:

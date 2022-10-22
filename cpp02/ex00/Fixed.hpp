@@ -7,14 +7,12 @@
 class Fixed
 {
 private:
-	int value;
-	static const int fractionalBits = 8;
-
-
-	/* data */
+		int _value;
+		static const int _fractionalBits = 8;
 public:
 	Fixed(/* args */);
 	~Fixed();
+	Fixed(const Fixed &fixed);
 
 	int getRawBits() const;
 	void setRawBits(int const raw);

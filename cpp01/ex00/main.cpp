@@ -1,10 +1,9 @@
 #include "Zombie.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
-    Zombie Zombie_stack("Stack");
-    Zombie_stack.announce();
-    
+    if (argc != 1)
+        return 0;
     Zombie *Zombie_heap =  newZombie("heap");
     Zombie_heap->announce();
     randomChump("RANDOM");

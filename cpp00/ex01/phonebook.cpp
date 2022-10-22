@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   phonebook.cpp                                      :+:    :+:            */
+/*   Phonebook.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/01 17:47:46 by adoner        #+#    #+#                 */
-/*   Updated: 2022/10/01 17:47:47 by adoner        ########   odam.nl         */
+/*   Updated: 2022/10/05 17:44:14 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void PHONEBOOK::add_new_user()
       this->size++;
     }
 }
-//TODO empty no
 
 //print right
 void print_space(int len)

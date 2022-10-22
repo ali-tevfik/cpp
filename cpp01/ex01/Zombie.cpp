@@ -3,7 +3,7 @@
 
 Zombie::Zombie()
 {
-    std::cout << YELLOW << " zombie was born"<<std::endl;
+    std::cout << YELLOW << "A zombie was born"<<std::endl;
     return ;
 }
 

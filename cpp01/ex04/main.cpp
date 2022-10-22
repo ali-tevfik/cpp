@@ -26,21 +26,20 @@ int main(int argc, char **argv)
         new_file.open( file_name + ".replace", std::ios::out);
         if (!new_file)
         {
-            close(my_file);
+            my_file.close();
             std::cout << "File not created!"<<std::endl;
             return 0;
         }
-	    while (1)
+        std::string str;
+	    while (getline (my_file, str))
         {
-
-            std::string str;
-	    	my_file >> str;
-            for (int i = 0; str[i]; i++)
+            for (unsigned int i = 0; str[i]; i++)
             {
                 if (str.compare(i,s1.size(),s1) == 0)
                 {
                     new_file << s2;
-                    i += s1.size() - 1;
+                    if (s1.size() != 0 && s2.size() != 0)
+                        i += s1.size() - 1;
                 }
                 else
                     new_file << str[i];
@@ -54,3 +53,5 @@ int main(int argc, char **argv)
 	}
 
 }
+
+// TODO ./replace Makefile "" ""

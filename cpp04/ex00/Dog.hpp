@@ -9,8 +9,9 @@ private:
     /* data */
 public:
     Dog(/* args */);
-    ~Dog();
-    virtual void makeSound();
+    Dog(const Dog& dog);
+    virtual ~Dog();
+    virtual void makeSound()const;
 };
 
 
