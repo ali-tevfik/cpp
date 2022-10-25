@@ -3,9 +3,9 @@
 
 Cat::Cat(/* args */)
 {
+    std::cout << "[Cat] constructer called!" << std::endl;
     _type = "Cat";
     this->_brain = new Brain;
-    std::cout << "[Cat] constructer called!" << std::endl;
 }
 Cat::Cat(const Cat& cat)
 {
@@ -21,6 +21,7 @@ Brain *Cat::getBrain()const{
 Cat::~Cat()
 {
     std::cout << "[Cat] destructur called!" << std::endl;
+    delete _brain;
 }
 
 void Cat::makeSound() const
