@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/01 17:48:17 by adoner        #+#    #+#                 */
-/*   Updated: 2022/10/01 17:48:18 by adoner        ########   odam.nl         */
+/*   Updated: 2022/10/25 14:51:39 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int main(void)
         print_menu();
         //todo emtpy check
         std::getline(std::cin, value);
+        value.erase(std::remove_if(value.begin(), value.end(), ::isspace),
+            value.end());
             value = upper(value);
             if (value == "ADD")
                 phonebook.add_new_user();
@@ -60,7 +62,7 @@ int main(void)
             else if (value == "EXIT")
                 break;
             else
-                std::cout << "ONLY ADD-SEARCH-EXIT!!!";
+                std::cout << RED << "ONLY ADD-SEARCH-EXIT!!!" << WHITE;
     }
     return 0;
 }

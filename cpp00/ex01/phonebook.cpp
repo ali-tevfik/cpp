@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/01 17:47:46 by adoner        #+#    #+#                 */
-/*   Updated: 2022/10/05 17:44:14 by adoner        ########   odam.nl         */
+/*   Updated: 2022/10/25 15:01:02 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ void PHONEBOOK::add_new_user()
 }
 
 //print right
-void print_space(int len)
+void PHONEBOOK::print_space(int len)
 {
    for (int i = 0; i < len; i++)
       std::cout << " ";
 }
 
 //show all contact information
-void print_user_info(std::string value)
+void PHONEBOOK::print_user_info(std::string value)
 {
   int len = 10;
 
@@ -77,7 +77,7 @@ void print_user_info(std::string value)
 }
 
 //show one contact all information
-void all_info(CONTACT& contact)
+void PHONEBOOK::all_info(CONTACT& contact)
 {
   std::cout << "first name is : " + contact.first_name << std::endl;
   std::cout << "last name is : " + contact.last_name << std::endl;
