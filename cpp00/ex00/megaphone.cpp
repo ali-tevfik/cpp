@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/01 17:48:09 by adoner        #+#    #+#                 */
-/*   Updated: 2022/10/01 17:48:09 by adoner        ########   odam.nl         */
+/*   Updated: 2022/10/25 14:27:52 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int main(int argc, char **argv)
 	int i = 1;
 	
 	if (argc == 1)
-    	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	{
+    	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		return 1;
+	}
 	else
 	{
 		while (i < argc)

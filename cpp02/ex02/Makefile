@@ -4,7 +4,7 @@ SRC				= 	main.cpp\
 					Fixed.cpp
 OBJS			=	$(SRC:%.cpp=%.o)
 
-CPP				=	g++
+CPP				=	c++
 CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
 
 all:			$(NAME)

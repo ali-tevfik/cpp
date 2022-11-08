@@ -1,20 +1,27 @@
-NAME			=	thisIsBrain
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -Wpedantic -std=c++98
 
-SRC				= 	main.cpp
-					
-OBJS			=	$(SRC:%.cpp=%.o)
+SRC_FILES = main.cpp
 
-CPP				=	g++
-CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
+OBJ_FILES = $(SRC_FILES:%.cpp=%.o)
 
-all:			$(NAME)
+NAME = ex02
 
-$(NAME):		$(OBJS)
-				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
+all: $(NAME)
+
+run: all
+	./$(NAME)
+
+$(NAME): $(OBJ_FILES)
+	$(CC) $(CFLAGS) $^ -o $@
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ_FILES)
+
 fclean: clean
 	rm -f $(NAME)
+
 re: fclean all
-.PHONY: all clean fclean re bonus

@@ -1,22 +1,31 @@
-NAME			=	zombieHorde
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -Wpedantic -std=c++98
 
-SRC				= 	main.cpp\
-					Zombie.cpp\
-					zombieHorde.cpp
-					
-OBJS			=	$(SRC:%.cpp=%.o)
+SRC_FILES = main.cpp \
+			Zombie.cpp \
+			zombieHorde.cpp
 
-CPP				=	g++
-CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
+HEADER_FILES = Zombie.hpp
 
-all:			$(NAME)
+OBJ_FILES = $(SRC_FILES:%.cpp=%.o)
 
-$(NAME):		$(OBJS)
-				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
+NAME = ex01
+
+all: $(NAME)
+
+run: all
+	./$(NAME)
+
+$(NAME): $(OBJ_FILES)
+	$(CC) $(CFLAGS) $^ -o $@
+
+%.o: %.cpp $(HEADER_FILES)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ_FILES)
+
 fclean: clean
-	rm -f $(NAME)
+	rm $(NAME)
+
 re: fclean all
-.PHONY: all clean fclean re bonus

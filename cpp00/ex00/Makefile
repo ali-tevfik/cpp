@@ -1,36 +1,25 @@
-#color
-GREEN = \033[38;5;2m
-RED = \033[38;5;1m
+CC = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-# Compiler settings
-GCC = g++
-FLAGS   = -Wall -Wextra -Werror -std=c++98
-
-# Source, tests, header and object files
 SRC_FILES = megaphone.cpp
 
-OBJ = $(SRC_FILES:%.c=$(OBJ_DIR)/%.o)
+OBJ_FILES = $(SRC_FILES:%.cpp=%.o)
 
-
-# Program name
 NAME = megaphone
 
-# Build release
 all: $(NAME)
 
 
-$(NAME): $(OBJ)
-	$(GCC) $(FLAGS) $^ -o $@
-	@echo "$(GREEN) Created megaphone executable.$(NORMAL)"
+$(NAME): $(OBJ_FILES)
+	$(CC) $(FLAGS) $^ -o $@
+
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -rdf $(OBJ_DIR)
-	@echo "$(RED) Deleted all object files.$(NORMAL)"
+	rm -f $(OBJ_FILES)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "$(RED) Deleted all executables.$(NORMAL)"
+	rm -rf $(NAME)
 
-re: clean fclean all
-
-.PHONY: clean fclean re
+re: fclean all

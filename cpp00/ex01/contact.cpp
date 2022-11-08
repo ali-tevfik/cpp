@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/01 17:47:42 by adoner        #+#    #+#                 */
-/*   Updated: 2022/10/25 15:06:25 by adoner        ########   odam.nl         */
+/*   Updated: 2022/11/01 12:40:22 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 //Constructor
 CONTACT::CONTACT(void)
 {	
-    std::cout << "Default Constructor called" << std::endl;
+    // std::cout << "Default Constructor called" << std::endl;
 }
 
 //Constructor ended
 CONTACT::~CONTACT(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 bool CONTACT::emty_check(std::string data)

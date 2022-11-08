@@ -15,10 +15,11 @@ class Zombie
 private:
   std::string _name;
 public:
-    int foo;
-    void announce(void);
     Zombie(std::string name);
+    Zombie(void);
     ~Zombie();
+
+    void announce(void);
 };
 
 //function

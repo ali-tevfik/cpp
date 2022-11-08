@@ -1,5 +1,11 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie(void)
+{
+    _name = "";
+    std::cout << YELLOW << _name + " zombie was born"<<std::endl;
+    return ;
+}
 
 Zombie::Zombie(std::string name)
 {

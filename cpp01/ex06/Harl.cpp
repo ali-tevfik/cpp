@@ -39,14 +39,13 @@ void Harl::ERROR()
 
 void Harl::complain( std::string level )
 {
-    void (Harl::*f[])(void)  = {&Harl::DEBUG, &Harl::INFO, &Harl::WARNING, &Harl::ERROR};
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     int i;
 	for (i = 0; i < 4; i++)
+    {
     	if (levels[i] == level)
-		{
             break;
-        }
+    }
     switch (i) {
         case 0 : DEBUG(); 
         case 1 : INFO();

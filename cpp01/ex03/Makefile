@@ -1,31 +1,34 @@
-NAME			= unnecessary_violance
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -Wpedantic -std=c++98
 
-CPP				= c++
+SRC_FILES = main.cpp \
+			Weapon.cpp \
+			HumanA.cpp \
+			HumanB.cpp
 
-FLAGS			= -Wall -Wextra -Werror -I -std=c++98
+HEADER_FILES = 	Weapon.hpp \
+				HumanA.hpp \
+				HumanB.hpp
 
-SRC				=   main.cpp\
-					HumanA.cpp\
-					HumanB.cpp\
-					Weapon.cpp
+OBJ_FILES = $(SRC_FILES:%.cpp=%.o)
 
-INC				= HumanA.hpp HumanB.hpp Weapon.hpp
+NAME = ex03
 
-OBJ_DIR			= obj
-OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
+all: $(NAME)
 
-all : $(NAME)
+run: all
+	./$(NAME)
 
-$(OBJ_DIR)/%.o : %.cpp $(INC)
-	@mkdir -p $(dir $@)
-	$(CPP) $(FLAGS) -c $< -o $@
+$(NAME): $(OBJ_FILES)
+	$(CC) $(CFLAGS) $^ -o $@
 
-$(NAME) : $(OBJ)
-	$(CPP) $(FLAGS) $^ -o $@
+%.o: %.cpp $(HEADER_FILES)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-clean : 
-	rm -rf $(OBJ_DIR)
-fclean : clean
-	rm -rf $(NAME)
-re : fclean all
-.PHONY : clean, fclean, all, re
+clean:
+	rm -f $(OBJ_FILES)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all

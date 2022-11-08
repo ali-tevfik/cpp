@@ -1,20 +1,30 @@
-NAME			=	Harl
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -Wpedantic -std=c++98
 
-SRC				= 	main.cpp\
-					Harl.cpp
-OBJS			=	$(SRC:%.cpp=%.o)
+SRC_FILES = main.cpp \
+			Harl.cpp
 
-CPP				=	g++
-CPP_FLAGS		= 	-Wall -Wextra -Werror -std=c++98 
+HEADER_FILES = Harl.hpp
 
-all:			$(NAME)
+OBJ_FILES = $(SRC_FILES:%.cpp=%.o)
 
-$(NAME):		$(OBJS)
-				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
+NAME = ex06
+
+all: $(NAME)
+
+run: all
+	./$(NAME) DEBUG
+
+$(NAME): $(OBJ_FILES)
+	$(CC) $(CFLAGS) $^ -o $@
+
+%.o: %.cpp $(HEADER_FILES)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ_FILES)
+
 fclean: clean
 	rm -f $(NAME)
+
 re: fclean all
-.PHONY: all clean fclean re bonus

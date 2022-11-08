@@ -1,4 +1,4 @@
-NAME			=	Polymorphism
+NAME			=	BrainyAnimals
 
 SRC				= 	main.cpp\
 					Animal.cpp\
