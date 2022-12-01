@@ -12,6 +12,8 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
 				
+run : all
+	./Fixed
 clean:
 	rm -f $(OBJS)
 fclean: clean
