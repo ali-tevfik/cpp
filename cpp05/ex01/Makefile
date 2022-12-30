@@ -1,4 +1,4 @@
-NAME			=	Bureaucrat
+NAME			=	Form
 
 SRC				= 	main.cpp\
 					Bureaucrat.cpp\
@@ -14,7 +14,7 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
 run : all
-	./Bureaucrat				
+	./Form				
 clean:
 	rm -f $(OBJS)
 fclean: clean
