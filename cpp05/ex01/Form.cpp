@@ -15,12 +15,12 @@ Form ::Form(const std::string & name, int gradeSigned, int gradeExecute)
 {
     _name = name;
     _gradeSign = gradeSigned;
-    _gradeExecute = gradeSigned;
+    _gradeExecute = gradeExecute;
     _isSigned = false;
     if (_gradeSign < 1 || _gradeExecute < 1)
         throw GradeTooLowException();
     if (_gradeExecute > 150 || _gradeSign > 150)
-        throw GradeTooHightException();
+        throw GradeTooHighException();
 }
 
 void Form::beSigned(const Bureaucrat & bureaucrat){
@@ -33,13 +33,12 @@ Form::~Form()
 {
 }
 
-//https://www.tutorialspoint.com/const-cast-in-cplusplus-type-casting-operators#:~:text=const_cast%20is%20one%20of%20the,changed%20occasionally%20at%20some%20point.
 Form &Form::operator=(const Form & form)
 {
     _isSigned = form.getIsSigned();
-    const_cast<int &>(_gradeSign) = form.getSignedGrade();
-    const_cast<std::string &>(_name) = form.getName();
-    const_cast<int &>(_gradeExecute) = form.getGradeExecute();
+    _gradeSign = form.getSignedGrade();
+    _name = form.getName();
+    _gradeExecute = form.getGradeExecute();
     return *this;
 }
 
@@ -68,7 +67,7 @@ std::ostream& operator<<(std::ostream& os, const Form& form) {
     return os;
 }
 
-const char *Form::GradeTooHightException::what( void ) const throw() {
+const char *Form::GradeTooHighException::what( void ) const throw() {
     return "Form_GradeTooHigh";
 }
 

@@ -4,10 +4,9 @@
 #include <iostream>
 #include <exception>
 
+#include "AForm.hpp"
 
-#define CYAN	"\033[36m"
-#define RESET	"\033[0m"
-
+class AForm;
 
 class Bureaucrat
 {
@@ -21,8 +20,9 @@ public:
     ~Bureaucrat();
     std::string getName()const;
     int getGrade()const;
-    void promotion();
-    void demotion();
+    void signForm(AForm & form)const;
+    void executeForm( const AForm& form) const;
+
     class GradeTooHighException : public std::exception
     {
         public:
@@ -32,6 +32,8 @@ public:
         public:
             virtual const char *what() const throw();
     };
+
+
 
 };
 

@@ -1,13 +1,23 @@
-NAME			= Form
+NAME			= Bureaucrat
 
 CPP				= c++
 
 FLAGS			= -Wall -Wextra -Werror -I -std=c++98
 
 SRC				= 	main.cpp\
-					Bureaucrat.cpp
+					Bureaucrat.cpp\
+					AForm.cpp\
+					ShrubberyCreationForm.cpp\
+					RobotomyRequestForm.cpp\
+					PresidentialPardonForm.cpp\
+					Intern.cpp
 
-INC				= 	Bureaucrat.hpp
+INC				= 	Bureaucrat.hpp\
+					AForm.hpp\
+					ShrubberyCreationForm.hpp\
+					RobotomyRequestForm.hpp\
+					PresidentialPardonForm.hpp\
+					Intern.hpp
 
 OBJ_DIR			= obj
 OBJ				= $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
@@ -22,7 +32,7 @@ $(NAME) : $(OBJ)
 	$(CPP) $(FLAGS) $^ -o $@
 
 run: all
-	 ./Form
+	 ./Bureaucrat
 clean : 
 	rm -rf $(OBJ_DIR)
 fclean : clean

@@ -22,7 +22,7 @@ public:
     int getGrade()const;
     void signForm(Form & form)const;
 
-    class GradeTooHightException : public std::exception
+    class GradeTooHighException : public std::exception
     {
         public:
             virtual const char *what() const throw();
