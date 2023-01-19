@@ -3,6 +3,12 @@
 
 #include <iostream>
 
+#define CYAN	"\033[36m"
+#define RED  	"\033[31m"
+#define GREEN 	"\033[32m"
+#define GREY	"\033[1;30m"
+#define RESET	"\033[0m"
+
 
 class ClapTrap
 {
@@ -15,12 +21,11 @@ public:
     ClapTrap(/* args */);
     ClapTrap(const std::string &name);
     ClapTrap(ClapTrap& claptrap);
-    ClapTrap &operator=(ClapTrap& claptrap);
+    ClapTrap &operator=(const ClapTrap& claptrap);
     ~ClapTrap();
 
-    void attac(const std::string& target);
     void takeDamage(unsigned int amount);
-    void beReparied(unsigned int amount);
+    void beRepaired(unsigned int amount);
     void attack(const std::string& target);
 
     const std::string& getName()const;

@@ -12,7 +12,9 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
-				
+
+run: all
+	./ClasTrap
 clean:
 	rm -f $(OBJS)
 fclean: clean

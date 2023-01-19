@@ -1,20 +1,20 @@
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap(/* args */) : ClapTrap() {
+ScavTrap::ScavTrap(/* args */) {
     std::cout << YELLOW << "[ScavTrap] constructor called!" << WHITE << std::endl;;
-    this->_attack_damage = 20;
-    this->_energy_points = 50;
-    this->_hit_points = 100;
+    _attack_damage = 20;
+    _energy_points = 50;
+    _hit_points = 100;
 }
 
-ScavTrap::ScavTrap(const std::string name) :ClapTrap(name)
+ScavTrap::ScavTrap(const std::string name)
 {
     std::cout << YELLOW << "[ScavTrap] copy constructor called!" << WHITE << std::endl;;
-
-    this->_attack_damage = 20;
-    this->_energy_points = 50;
-    this->_hit_points = 100;
+    _name = name;
+    _attack_damage = 20;
+    _energy_points = 50;
+    _hit_points = 100;
 }
 ScavTrap::ScavTrap(const ScavTrap& scavtrap)
 {
@@ -32,11 +32,11 @@ ScavTrap::~ScavTrap()
 void ScavTrap::attack(const std::string& target)
 {
     if (_energy_points == 0)
-        std::cout << "[ScavTrap] " << _name << " cant anything(energy emtpy!)." << std::endl;
+        std::cout << "[ScavTrap]"<< _name << " cant anything(energy emtpy!)." << std::endl;
     else
     {
         _energy_points--;
-        std::cout << "[ScavTrap]  "<< this->_name << " " << target << " , causing "<< this->_attack_damage << " points of damage!"<<std::endl;
+        std::cout << "[ScavTrap]  "<< _name << " => " << target << " , causing "<< _attack_damage << " points of damage!"<<std::endl;
     }
 }
 
@@ -47,8 +47,8 @@ void ScavTrap::attack(const std::string& target)
  }
 
 void ScavTrap::guardGate( void ) {
-    if (this->_hit_points == 0)
-        std::cout << YELLOW << _name << " is dead, can't be in gate keeper mode." << WHITE << std::endl;
+    if (_hit_points == 0)
+        std::cout  << YELLOW << "[ScavTrap]" << _name << " is dead, can't be in gate keeper mode." << WHITE << std::endl;
     else
-        std::cout << YELLOW << _name << " is in gatekeeper mode " << WHITE << std::endl;
+        std::cout  << YELLOW << "[ScavTrap]" << _name << " is in gatekeeper mode " << WHITE << std::endl;
 }

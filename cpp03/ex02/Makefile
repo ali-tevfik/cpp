@@ -1,4 +1,4 @@
-NAME			=	ClasTrap
+NAME			=	fragTrap
 
 SRC				= 	main.cpp\
 					ClapTrap.cpp\
@@ -15,6 +15,8 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
 				
+run: all
+	./fragTrap
 clean:
 	rm -f $(OBJS)
 fclean: clean

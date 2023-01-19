@@ -35,9 +35,21 @@ FragTrap::~FragTrap()
     return *this;
  }
 
+void FragTrap::attack(const std::string& target)
+{
+    std::cout << GREY << "[FragTrap]Attack" << RESET;
+    if (_energy_points == 0)
+        std::cout << _name << " cant anything(hit points are not enough!)." << std::endl;
+    else
+    {
+        _energy_points--;
+        std::cout << _name << " => " << target << " , causing "<< _attack_damage << " points of damage!"<<std::endl;
+    }
+}
+
 void FragTrap::highFivesGuys( void ) {
     if (this->_hit_points == 0)
-        std::cout << YELLOW << _name << " is dead, can't be in gate keeper mode." << WHITE << std::endl;
+        std::cout << YELLOW <<"[FragTrap] " << _name << " is dead, can't be in gate keeper mode." << WHITE << std::endl;
     else
-        std::cout << YELLOW << _name << " is in gatekeeper mode " << WHITE << std::endl;
+        std::cout << YELLOW << "[FragTrap] " << _name << "  wants to high five  " << WHITE << std::endl;
 }

@@ -22,7 +22,7 @@ public:
     Animal(const Animal& animal);
     virtual ~Animal();
     virtual    void makeSound() const = 0;
-    const std::string& getType()const;
+    const std::string& getType()const;3
 protected:
     std::string _type;
 

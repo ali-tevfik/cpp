@@ -6,18 +6,17 @@
 
 class ScavTrap : public ClapTrap
 {
-private:
-    /* data */
+
 public:
     ScavTrap(/* args */);
     ScavTrap(const std::string name);
     ScavTrap(const ScavTrap& scavtrap);
     ~ScavTrap();
 
-     ScavTrap& operator=( const ScavTrap& scavtrap );
+    ScavTrap& operator=( const ScavTrap& scavtrap );
+    
     void attack(const std::string& target);
-
-     void guardGate();
+    void guardGate();
 };
 
 

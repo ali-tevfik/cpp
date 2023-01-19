@@ -17,6 +17,8 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				$(CPP) $(CPP_FLAGS) $(OBJS) -o $(NAME)
 				
+run:all
+	./Polymorphism
 clean:
 	rm -f $(OBJS)
 fclean: clean
