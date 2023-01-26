@@ -13,17 +13,8 @@ int main(int argc, char **argv)
             std::cerr << e.what() << '\n';
         }
     }
-        return 0;
+    else
+        std::cout << "just 1 argument please" << std::endl;
         
-    // }
-    // else
-    //     std::cout << "error" << std::endl;
-
-    // //char
-    //     Converter c("c");
-    // double
-    // //  float
-    //     Converter f("1.3f");
-    // //int
-    //     Converter i("12");
+    return 0;
 }
